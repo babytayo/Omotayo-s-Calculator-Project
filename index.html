@@ -69,49 +69,53 @@
 <body>
 
     <h2>Simple Calculator</h2>
-    <table>
-        <thead>
-            <tr>
-                <td colspan="4"><input type="text" placeholder="0.00"
-                        style=" width: 100%; height:6em; text-align: right;" readonly></td>
-            </tr>
-        </thead>
-        <tbody>
+    <form name="calc" method="dialog">
+        <table class="calc" title="calculate something">
+            <thead>
+                <tr>
+                    <td colspan="4"><input type="text" placeholder="0.00" class="output" name="input"
+                            style=" width: 100%; height:4em; text-align: right; font-size: 22px;" readonly></td>
+                </tr>
+            </thead>
+            <tbody>
 
-            <tr>
-                <td><input type="button" value="DEL" id="del"></td>
-                <td><input type="button" value="%" class="other-boxes"></td>
-                <td><input type="button" value="/" class="other-boxes"></td>
-                <td><input type="button" value="x" class="other-boxes"></td>
-            </tr>
-            <tr>
-                <td><input type="button" value="7" class="leftcol-btn"></td>
-                <td><input type="button" value="8" class="other-boxes"></td>
-                <td><input type="button" value="9" class="other-boxes"></td>
-                <td><input type="button" value="-" class="other-boxes"></td>
-            </tr>
-            <tr>
-                <td><input type="button" value="4" class="leftcol-btn"></td>
-                <td><input type="button" value="5" class="other-boxes"></td>
-                <td><input type="button" value="6" class="other-boxes"></td>
-                <td rowspan="2"><input type="button" value="+"
-                        style="width: 53px; height: 106px; background-color: #ffe6ff; font: 22px; border: none"></td>
-            </tr>
-            <tr>
-                <td><input type="button" value="1" class="leftcol-btn"></td>
-                <td><input type="button" value="2" class="other-boxes"></td>
-                <td><input type="button" value="3" class="other-boxes"></td>
-            </tr>
-            <tr>
-                <td><input type="button" value="." class="leftcol-btn"></td>
-                <td><input type="button" value="0" class="other-boxes"></td>
-                <td colspan="2"><input type="button" value="="
-                        style="width: 110px; height: 53px; background-color: #ffe6ff; font-size: 22; border: none;">
-                </td>
-            </tr>
-        </tbody>
+                <tr>
+                    <td><input type="reset" value="DEL" id="del"></td>
+                    <td><input type="button" value="%" class="other-boxes" onclick="calc.input.value += '%'"></td>
+                    <td><input type="button" value="/" class="other-boxes" onclick="calc.input.value += '/'"></td>
+                    <td><input type="button" value="x" class="other-boxes" onclick="calc.input.value += '*'"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="7" class="leftcol-btn" onclick="calc.input.value += '7'"></td>
+                    <td><input type="button" value="8" class="other-boxes" onclick="calc.input.value += '8'"></td>
+                    <td><input type="button" value="9" class="other-boxes" onclick="calc.input.value += '9'"></td>
+                    <td><input type="button" value="-" class="other-boxes" onclick="calc.input.value += '-'"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="4" class="leftcol-btn" onclick="calc.input.value += '4'"></td>
+                    <td><input type="button" value="5" class="other-boxes" onclick="calc.input.value += '5'"></td>
+                    <td><input type="button" value="6" class="other-boxes" onclick="calc.input.value += '6'"></td>
+                    <td rowspan="2"><input type="button" value="+" onclick="calc.input.value += ' + '"
+                            style="width: 53px; height: 106px; background-color: #ffe6ff; font: 22px; border: none">
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="1" class="leftcol-btn" onclick="calc.input.value += '1'"></td>
+                    <td><input type="button" value="2" class="other-boxes" onclick="calc.input.value += '2'"></td>
+                    <td><input type="button" value="3" class="other-boxes" onclick="calc.input.value += '3'"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="." class="leftcol-btn" onclick="calc.input.value += '.'"></td>
+                    <td><input type="button" value="0" class="other-boxes" onclick="calc.input.value += '0'"></td>
+                    <td colspan="2"><input type="button" value="="
+                            onclick="calc.input.value = eval(calc.input.value);solved();"
+                            style="width: 110px; height: 53px; background-color: #ffe6ff; font-size: 22; border: none;">
+                    </td>
+                </tr>
+            </tbody>
 
-    </table>
+        </table>
+    </form>
     <footer>made by Omotayo</footer>
 </body>
 
